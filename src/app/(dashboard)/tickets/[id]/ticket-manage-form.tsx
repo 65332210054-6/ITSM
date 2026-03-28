@@ -13,7 +13,7 @@ export function TicketManageForm({ ticket }: { ticket: any }) {
         <CardTitle className="text-lg">อัปเดตสถานะ & บันทึกการแก้ไข</CardTitle>
       </CardHeader>
       <CardContent className="pt-6">
-        <form action={updateTicketStatus.bind(null, ticket.id)} className="space-y-4">
+        <form action={async (formData) => { await updateTicketStatus(ticket.id, formData) }} className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="status">เปลี่ยนสถานะ</Label>
             <select id="status" name="status" defaultValue={ticket.status} className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm">
