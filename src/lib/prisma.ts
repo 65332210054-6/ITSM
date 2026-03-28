@@ -14,6 +14,7 @@ export const prisma = new Proxy({} as PrismaClient, {
       client = globalForPrisma.prisma
     } else {
       try {
+        // @ts-ignore
         const { getRequestContext } = require("@cloudflare/next-on-pages")
         const ctx = getRequestContext()
         
